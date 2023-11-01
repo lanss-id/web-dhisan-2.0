@@ -1,9 +1,23 @@
-import './globals.css'
+import 'styles/globals.css'
 import { Metadata } from 'next'
+import { siteConfig } from "@/config/site";
+import { Providers } from './providers'
 
 export const metadata: Metadata = {
-  title: 'Next.js and Supabase Starter Kit',
-  description: 'The fastest way to build apps with Next.js and Supabase',
+  title: {
+		default: siteConfig.name,
+		template: `%s - ${siteConfig.name}`,
+	},
+	description: siteConfig.description,
+	themeColor: [
+		{ media: "(prefers-color-scheme: light)", color: "white" },
+		{ media: "(prefers-color-scheme: dark)", color: "black" },
+	],
+	icons: {
+		icon: "/favicon.ico",
+		shortcut: "/favicon-16x16.png",
+		apple: "/apple-touch-icon.png",
+	},
 }
 
 export default function RootLayout({
@@ -14,8 +28,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-background text-foreground">
-        <main className="min-h-screen flex flex-col items-center">
-          {children}
+        <main className="min-h-screen container flex flex-col items-center">
+          <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
+            {children}
+          </Providers>
         </main>
       </body>
     </html>

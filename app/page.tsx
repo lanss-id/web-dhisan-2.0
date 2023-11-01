@@ -1,55 +1,40 @@
-import DeployButton from '../components/DeployButton'
-import AuthButton from '../components/AuthButton'
-import { createClient } from '@/utils/supabase/server'
-import ConnectSupabaseSteps from '@/components/ConnectSupabaseSteps'
-import SignUpUserSteps from '@/components/SignUpUserSteps'
-import Header from '@/components/Header'
-import { cookies } from 'next/headers'
+import { Button } from "@/components/ui/button"
 
 export default async function Index() {
-  const cookieStore = cookies()
-
-  const canInitSupabaseClient = () => {
-    try {
-      createClient(cookieStore)
-      return true
-    } catch (e) {
-      return false
-    }
-  }
-
-  const isSupabaseConnected = canInitSupabaseClient()
 
   return (
-    <div className="flex-1 w-full flex flex-col gap-20 items-center">
-      <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
-        <div className="w-full max-w-4xl flex justify-between items-center p-3 text-sm">
-          <DeployButton />
-          {isSupabaseConnected && <AuthButton />}
-        </div>
-      </nav>
-
-      <div className="animate-in flex-1 flex flex-col gap-20 opacity-0 max-w-4xl px-3">
-        <Header />
-        <main className="flex-1 flex flex-col gap-6">
-          <h2 className="font-bold text-4xl mb-4">Next steps</h2>
-          {isSupabaseConnected ? <SignUpUserSteps /> : <ConnectSupabaseSteps />}
-        </main>
-      </div>
-
-      <footer className="w-full border-t border-t-foreground/10 p-8 flex justify-center text-center text-xs">
-        <p>
-          Powered by{' '}
-          <a
-            href="https://supabase.com/?utm_source=create-next-app&utm_medium=template&utm_term=nextjs"
-            target="_blank"
-            className="font-bold hover:underline"
-            rel="noreferrer"
-          >
-            Supabase
-          </a>
-        </p>
-      </footer>
-    </div>
+    <>
+			<section className="flex flex-col py-2 md:py-10 md:w-full">
+				<div className="flex flex-wrap md:flex-nowrap justify-start md:justify-between">
+					<h1 className={`text-5xl mt-4 font-semibold font-messiri antialiased tracking-wider`}>Arsitek Developer Indonesia</h1>
+					<div className="md:grid md:justify-items-end">
+						<p className='w-3/4 mt-2 antialiased md:text-end'>Menawarkan keunggulan dalam proyek developer di indonesia.</p>
+						<Button className="border-2 py-2 px-4 text-sm mt-4 mb-6 antialiased tracking-wider" 
+						color="primary">
+							Konsultasi Gratis
+						</Button>  
+					</div>
+				</div>
+				{/* <Carousel /> */}
+			</section>
+			<section className='mt-12 space-y-4'>
+				{/* <h1 className={`${messiri.className} font-semibold text-2xl`}>
+					About us
+				</h1> */}
+				<p>
+					Kami adalah mitra terpercaya bagi para developer bangunan di Indonesia yang ingin menghadirkan proyek-proyek bangunan yang berkesan dan memukau. Sebagai sebuah studio arsitektur yang berdedikasi, kami memiliki visi untuk mengubah pandangan Anda tentang arsitektur. Kami menghadirkan inovasi dan kreativitas dalam setiap proyek, menciptakan desain yang tak hanya memikat, tetapi juga berfungsionalitas tinggi.
+				</p>
+			</section>
+			<section className="mt-12 space-y-4">
+				{/* <h1 className={`${messiri.className} font-semibold text-2xl`}>Portofolio</h1>
+				<Carousel />
+				<Carousel />
+				<Carousel /> */}
+			</section>
+			<section className="mt-12 space-y-4">
+				{/* <h1 className={`${messiri.className} font-semibold text-2xl`}>Consult</h1>
+				<FormConsult /> */}
+			</section>
+		</>
   )
 }
