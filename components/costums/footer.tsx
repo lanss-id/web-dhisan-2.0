@@ -7,8 +7,8 @@ import NextLink from 'next/link';
 
 const footer = () => {
   return (
-    <footer className="bg-white dark:bg-black border-t-1 border-gray-200 dark:border-gray-700">
-        <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+    <footer className="px-7 shadow-white/5">
+        <div className=" w-full py-6 lg:py-8">
             <div className="md:flex md:justify-between">
             <div className="mb-6 md:mb-0">
                 <NextLink href='/' className="flex items-center">
