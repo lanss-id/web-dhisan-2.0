@@ -18,12 +18,12 @@ import { Logo } from "@/components/costums/icons";
 
 export const Navbar = () => {
 	return (
-		<NextUINavbar maxWidth="xl" position="sticky" className="shadow-sm dark:shadow-gray-800">
-			<NavbarContent className="basis-1/5 sm:basis-full" justify="start">
+		<NextUINavbar maxWidth="full" position="sticky" className="shadow-lg dark:shadow-white/5 container-none">
+			<NavbarContent className="basis-1/5 sm:basis-full -pl-4" justify="start">
 				<NavbarBrand as="li" className="gap-3 max-w-fit">
 					<NextLink className="flex justify-start items-center gap-1" href="/">
 						<Logo className="fill-black dark:fill-white"/>
-						<p className="font-bold text-inherit tracking-wider">Dhisan Atelier</p>
+						<p className="font-bold text-inherit tracking-wider text-xl">Dhisan Atelier</p>
 					</NextLink>
 				</NavbarBrand>
 			</NavbarContent>
@@ -59,13 +59,13 @@ export const Navbar = () => {
 			</NavbarContent>
 
 			<NavbarMenu>
-				<div className="mx-4 mt-2 flex flex-col items-center h-screen justify-center gap-2 space-y-5">
+				<div className="mx-4 mt-2 flex flex-col items-center h-screen justify-center gap-2 space-y-10">
 					{siteConfig.navMenuItems.map((item, index) => (
 						<NavbarMenuItem key={`${item}-${index}`}>
 							<Link
 								color={"foreground"}
 								href={item.href}
-								size="lg"
+								className="text-3xl font-semibold tracking-wide antialiased"
 							>
 								{item.label}
 							</Link>

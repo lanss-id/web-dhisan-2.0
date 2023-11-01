@@ -1,6 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri&family=Poppins:wght@200;300;400&display=swap');
  
 @layer base {
   :root {
@@ -36,14 +38,14 @@
   }
  
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 	359, 100%, 0%;
+    --foreground: 0 0% 98%;
  
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 	359, 100%, 0%;
+    --card-foreground: 0 0% 98%;
  
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 	359, 100%, 0%;
+    --popover-foreground: 0 0% 98%;
  
     --primary: 210 40% 98%;
     --primary-foreground: 222.2 47.4% 11.2%;
@@ -71,6 +73,6 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-poppins;
   }
 }

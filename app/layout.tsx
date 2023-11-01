@@ -1,18 +1,23 @@
-import 'styles/globals.css'
+import '@/styles/globals.css'
 import { Metadata } from 'next'
 import { siteConfig } from "@/config/site";
 import { Providers } from './providers'
+import { Navbar } from '@/components/costums/navbar'
+import Footer  from '@/components/costums/footer'
+import {Poppins} from 'next/font/google'
 
+const poppins = Poppins({
+  weight: '400',
+  subsets: ['latin-ext'],
+  display: 'swap'
+}) 
+ 
 export const metadata: Metadata = {
   title: {
 		default: siteConfig.name,
 		template: `%s - ${siteConfig.name}`,
 	},
 	description: siteConfig.description,
-	themeColor: [
-		{ media: "(prefers-color-scheme: light)", color: "white" },
-		{ media: "(prefers-color-scheme: dark)", color: "black" },
-	],
 	icons: {
 		icon: "/favicon.ico",
 		shortcut: "/favicon-16x16.png",
@@ -27,12 +32,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-background text-foreground">
-        <main className="min-h-screen container flex flex-col items-center">
+      <body className={`bg-background text-foreground container ${poppins.className}`}>
           <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-            {children}
+            <Navbar />
+            <main className={`min-h-screen flex flex-col items-center`}>
+                {children}
+            </main>
+            <Footer />
           </Providers>
-        </main>
       </body>
     </html>
   )
