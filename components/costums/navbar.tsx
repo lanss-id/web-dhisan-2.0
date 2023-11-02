@@ -65,7 +65,7 @@ export const Navbar = () => {
 							<Link
 								color={"foreground"}
 								href={item.href}
-								className="text-3xl font-semibold tracking-wide antialiased"
+								className="text-3xl font-medium tracking-wider antialiased hover:text-[#D2B13E] transition ease-in-out duration-200"
 							>
 								{item.label}
 							</Link>

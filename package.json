@@ -5,11 +5,15 @@
     "build": "next build",
     "start": "next start",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "test": "turbo run test"
+    "test": "turbo run test",
+    "lint": "next lint"
   },
   "dependencies": {
     "@next/third-parties": "^14.0.1",
     "@nextui-org/react": "^2.1.13",
+    "@radix-ui/react-alert-dialog": "^1.0.5",
+    "@radix-ui/react-dialog": "^1.0.5",
+    "@radix-ui/react-label": "^2.0.2",
     "@radix-ui/react-slot": "^1.0.2",
     "@supabase/auth-helpers-nextjs": "^0.8.4",
     "@supabase/auth-helpers-react": "^0.4.2",
@@ -35,6 +39,8 @@
     "@types/node": "20.3.1",
     "@types/react": "18.2.8",
     "@types/react-dom": "18.2.5",
-    "encoding": "^0.1.13"
+    "encoding": "^0.1.13",
+    "eslint": "8.52.0",
+    "eslint-config-next": "14.0.1"
   }
 }
