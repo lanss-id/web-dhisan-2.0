@@ -1,10 +1,12 @@
 import React from "react";
 import {Input, Textarea} from "@nextui-org/react";
+import { Button } from "@nextui-org/react";
 
 export default function FormConsult() {
   return (
     <div className="w-full flex flex-col gap-4">
         <div className="flex w-full flex-col mb-6 md:mb-0 gap-4">
+          <form action="">
           <Input 
             size={'lg'} 
             type="text" 
@@ -37,6 +39,13 @@ export default function FormConsult() {
             placeholder="Beri tahu kami apa yang ingin anda sampaikan disini"
             variant='underlined'
           />
+          <Button 
+          radius="none"
+          className="mt-6"
+          >
+            Kirimkan
+          </Button>
+          </form>
         </div>
     </div>  
   );

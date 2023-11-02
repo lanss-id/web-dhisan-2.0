@@ -13,7 +13,7 @@ module.exports = {
   theme: {
     container: {
       center: true,
-      padding: "1.8rem",
+      padding: "0.5rem",
       screens: {
         "2xl": "1400px",
       },
@@ -25,6 +25,7 @@ module.exports = {
       },
       boxShadow: {
         '3xl': '0 35px 60px -15px rgba(0, 0, 0, 0.3)',
+        'inner-lg' : 'inset 0 6px 12px 0 rgb(0 0 0 / 0.05)'
       },
       colors: {
         border: "hsl(var(--border))",

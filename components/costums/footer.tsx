@@ -7,7 +7,7 @@ import NextLink from 'next/link';
 
 const footer = () => {
   return (
-    <footer className="px-7 shadow-white/5">
+    <footer className="px-7 border-t border-slate-800">
         <div className=" w-full py-6 lg:py-8">
             <div className="md:flex md:justify-between">
             <div className="mb-6 md:mb-0">
@@ -64,7 +64,7 @@ const footer = () => {
                 </div>
             </div>
         </div>
-        <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <hr className="my-6 border-gray-800 sm:mx-auto lg:my-8" />
         <div className="sm:flex sm:items-center sm:justify-between">
             <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <NextLink href="/" className="hover:underline">Dhisan Atelier</NextLink>. All Rights Reserved.
             </span>
