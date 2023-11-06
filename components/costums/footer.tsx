@@ -23,8 +23,8 @@ const footer = () => {
                     <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
                     <ul className="text-gray-400 space-y-4">
                         {siteConfig.navItems.map((item) => (
-                            <li>
-                                <Link href={item.href} className='text-gray-400 hover:underline hover:text-primary'>{item.label}</Link>
+                            <li key={item.href}>
+                                <Link isDisabled={item.class}  href={item.href} className='text-gray-400 hover:underline hover:text-primary'>{item.label}</Link>
                             </li>
                         ))}
                     </ul>

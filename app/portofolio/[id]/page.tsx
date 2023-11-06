@@ -19,8 +19,9 @@ export default function page({ params }: {params: {id:string}}) {
               this is a detail portofolio {detailPorto?.title}
           </div>
           <div className="">
-              {detailPorto && 
-                <img src={detailPorto.image} alt="portofolio"/>
+              {detailPorto?.image?.map(img => (
+                <img key={img} src={img}/>
+              ))
               }
               {detailPorto && 
                   <p>{detailPorto.description}</p>
