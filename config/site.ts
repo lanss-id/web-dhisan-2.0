@@ -7,52 +7,32 @@ export const siteConfig = {
 		{
 			label: "Home",
 			href: "/",
+			class: false
 		},
 		{
 			label: "About",
 			href: "/about",
-		},
-		{
-			label: "Portofolio",
-			href: "/portofolio",
+			class: false
 		},
 		{
 			label: "Services",
 			href: "/services",
-		},
-		{
-			label: "Blog",
-			href: "/blog",
-		},
-		{
-			label: "Contact",
-			href: "/contact",
-		},
-	],
-	navMenuItems: [
-		{
-			label: "Home",
-			href: "/",
-		},
-		{
-			label: "About",
-			href: "/about",
+			class: false
 		},
 		{
 			label: "Portofolio",
 			href: "/portofolio",
-		},
-		{
-			label: "Services",
-			href: "/services",
+			class: false
 		},
 		{
 			label: "Blog",
 			href: "/blog",
+			class: true		
 		},
 		{
 			label: "Contact",
 			href: "/contact",
+			class: false
 		},
 	],
 	links: {
