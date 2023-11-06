@@ -1,5 +1,7 @@
 import { El_Messiri } from "next/font/google"
 import CarouselTransition from "@/components/costums/carousel";
+import { portofolios } from "@/config/portofolios";
+import Link from "next/link";
 
 const messiri = El_Messiri({
 	weight: '400',
@@ -22,6 +24,16 @@ export default function AboutPage() {
 					<CarouselTransition />
 					<CarouselTransition />
 					<CarouselTransition />
+				</div>
+				<div className="">
+					{portofolios.map(portofolio => (
+						<Link
+						 href={'/portofolio/' + portofolio.id} 
+						 key={portofolio.id}
+						 >
+							{portofolio.title}
+						</Link>
+					))}
 				</div>
 		</section>
 	);
