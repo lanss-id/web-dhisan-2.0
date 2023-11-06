@@ -13,13 +13,21 @@ export const siteConfig = {
 			href: "/about",
 		},
 		{
-			label: "Pricing",
-			href: "/pricing",
+			label: "Portofolio",
+			href: "/portofolio",
+		},
+		{
+			label: "Services",
+			href: "/services",
 		},
 		{
 			label: "Blog",
 			href: "/blog",
-		}
+		},
+		{
+			label: "Contact",
+			href: "/contact",
+		},
 	],
 	navMenuItems: [
 		{
@@ -31,12 +39,20 @@ export const siteConfig = {
 			href: "/about",
 		},
 		{
-			label: "Pricing",
-			href: "/pricing",
+			label: "Portofolio",
+			href: "/portofolio",
+		},
+		{
+			label: "Services",
+			href: "/services",
 		},
 		{
 			label: "Blog",
 			href: "/blog",
+		},
+		{
+			label: "Contact",
+			href: "/contact",
 		},
 	],
 	links: {
@@ -46,4 +62,5 @@ export const siteConfig = {
 		discord: "https://discord.gg/9b6yyZKmH4",
     	sponsor: "https://patreon.com/jrgarciadev"
 	},
+	image: '../public/metadata-og-min.png'
 };

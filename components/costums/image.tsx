@@ -1,7 +1,7 @@
 import React from 'react'
 import {Image} from "@nextui-org/image";
 
-const image = () => {
+export const image = () => {
   return (
     <Image 
     className='object-cover rounded-none w-screen h-56 md:h-96'
@@ -13,4 +13,8 @@ const image = () => {
   )
 }
 
-export default image
+export const metaimg = () => {
+  <Image
+    src='metadata-og.png'
+  />
+}

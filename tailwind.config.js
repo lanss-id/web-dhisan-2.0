@@ -1,7 +1,8 @@
 const {nextui} = require("@nextui-org/react");
+const withMT = require("@material-tailwind/react/utils/withMT");
 
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+module.exports = withMT({
   darkMode: ["class"],
   content: [
     './pages/**/*.{ts,tsx}',
@@ -9,6 +10,8 @@ module.exports = {
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/@material-tailwind/react/components/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/@material-tailwind/react/theme/components/**/*.{js,ts,jsx,tsx}",
 	],
   theme: {
     container: {
@@ -21,7 +24,7 @@ module.exports = {
     extend: {
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
-        messiri: ['El_Messiri', 'sans-serif'],
+        messiri: ['var(--font-messiri)'],
       },
       boxShadow: {
         '3xl': '0 35px 60px -15px rgba(0, 0, 0, 0.3)',
@@ -99,4 +102,4 @@ module.exports = {
       },
     })
   ],
-}
+})

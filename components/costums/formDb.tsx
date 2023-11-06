@@ -1,9 +1,16 @@
-import React from "react";
-import {Input, Textarea, Button} from "@nextui-org/react";
+import {Input, Textarea, Button, Select, SelectItem} from "@nextui-org/react";
+import { createClient } from '@/utils/supabase/server'
+import { cookies } from 'next/headers'
 
-export default function FormConsult() {
+export const dynamic = 'force-dynamyc'
+
+export default async function Page() {
+  const supabase = createClient(cookies())
+  const {data: typeService} = await supabase.from('type_service').select()
+
   return (
-    <div className="w-full flex flex-col gap-4">
+    <>
+      <div className="w-full flex flex-col gap-4">
         <div className="flex w-full flex-col mb-6 md:mb-0 gap-4">
           <form action="">
           <Input 
@@ -38,6 +45,7 @@ export default function FormConsult() {
             placeholder="Beri tahu kami apa yang ingin anda sampaikan disini"
             variant='underlined'
           />
+          
           <Button 
           radius="none"
           className="mt-6"
@@ -45,7 +53,15 @@ export default function FormConsult() {
             Kirimkan
           </Button>
           </form>
+          <Select 
+          label="Select an animal" 
+          className="max-w-xs" 
+          variant="underlined"
+          >
+            <SelectItem key={'hi'}>hi</SelectItem>
+          </Select>
         </div>
-    </div>  
-  );
+    </div> 
+    </>
+  )
 }

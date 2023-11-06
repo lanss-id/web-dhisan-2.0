@@ -1,7 +1,6 @@
 import { createClient } from '@/utils/supabase/server'
 import { cookies } from 'next/headers'
 import Link from 'next/link'
-import { User } from '@supabase/supabase-js'
 
 //component
 import Card from '@/components/smoothies/card'
