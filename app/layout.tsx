@@ -5,7 +5,7 @@ import { Providers } from './providers'
 import { Navbar } from '@/components/costums/navbar'
 import Footer  from '@/components/costums/footer'
 import {Poppins} from 'next/font/google'
-import Head from 'next/head';
+import React from 'react';
 
 const poppins = Poppins({
   weight: '400',
@@ -14,29 +14,29 @@ const poppins = Poppins({
 }) 
  
 export const metadata: Metadata = {
+  metadataBase: new URL('http://localhost:3000'),
   title: {
 		default: siteConfig.name,
-		template: `%s - ${siteConfig.name}`,
+		template: `%s | ${siteConfig.name}`,
 	},
+  keywords:['Arsitektur', 'developer', 'design', 'interior', 'exterior'],
 	description: siteConfig.description,
 	icons: {
 		icon: "/favicon.ico",
 		shortcut: "/favicon.ico",
-		apple: "/apple-touch-icon.png",
+		apple: "/favicon.ico",
 	},
   openGraph: {
-    images: [{
-        url: siteConfig.image,
-    }],
+    type: 'website',
+    title: siteConfig.name,
     siteName: siteConfig.name,
     description: siteConfig.description,
-    title: siteConfig.name,
-    type: 'website',
-    url: 'https://2p1p04cw-3000.asse.devtunnels.ms/'
+    images: siteConfig.image,
   },
   twitter: {
     images: siteConfig.image
-  }
+  },
+  applicationName: 'Dhisan Company Profile'
 }
 
 export default function RootLayout({

@@ -2,7 +2,6 @@ import { Button } from "@nextui-org/react"
 import { El_Messiri } from "next/font/google"
 import FormConsult from "@/components/costums/form"
 import Carousel from '@/components/costums/carousel'
-import Head from "next/head"
 
 const messiri = El_Messiri({
 	weight: '400',
@@ -13,9 +12,6 @@ const messiri = El_Messiri({
 export default function Index() {
   return (
 	<>
-		<Head>
-			<meta title="dhisan atelier" content=""/>
-		</Head>
 		<div className="px-7">
 		<section className="flex flex-col py-2 md:py-10 md:w-full">
 			<div className="flex flex-wrap md:flex-nowrap justify-start md:justify-between">

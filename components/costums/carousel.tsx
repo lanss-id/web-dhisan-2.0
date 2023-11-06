@@ -1,12 +1,11 @@
 'use client'
 
 import { Carousel } from "@material-tailwind/react";
-import Image from "next/image";
  
 export default function CarouselTransition() {
   return (
     <Carousel 
-      transition={{ duration: 0.8}}
+      transition={{ duration: 0.5}}
       navigation={({ setActiveIndex, activeIndex, length }) => (
         <div className="absolute bottom-4 left-2/4 z-10 flex -translate-x-2/4 gap-2">
           {new Array(length).fill("").map((_, i) => (
@@ -22,17 +21,17 @@ export default function CarouselTransition() {
       )}
     >
       <img
-        src='porto/forest-hill.png'
+        src='/porto/forest-hill.png'
         alt="image 1"
         className="object-cover rounded-none w-screen aspect-video object-center md:h-96 lg:h-[32rem] xl:h-[38rem]"
       />
       <img
-        src='porto/andromeda.png'
+        src='/porto/andromeda.png'
         alt="image 1"
         className="object-cover rounded-none w-screen aspect-video object-center md:h-96 lg:h-[32rem] xl:h-[38rem]"
       />
       <img
-        src='porto/interior-b1.png'
+        src='/porto/interior-b1.png'
         alt="image 1"
         className="object-cover rounded-none w-screen aspect-video object-center md:h-96 lg:h-[32rem] xl:h-[38rem]"
       />

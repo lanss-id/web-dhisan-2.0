@@ -27,10 +27,7 @@ export default function AboutPage() {
 				</div>
 				<div className="">
 					{portofolios.map(portofolio => (
-						<Link
-						 href={'/portofolio/' + portofolio.id} 
-						 key={portofolio.id}
-						 >
+						<Link href={'/portofolio/' + portofolio.id} key={portofolio.id}>
 							{portofolio.title}
 						</Link>
 					))}

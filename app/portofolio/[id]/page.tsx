@@ -1,7 +1,7 @@
 import React from 'react'
 import { portofolios } from '@/config/portofolios'
 import { El_Messiri } from 'next/font/google';
-import Image from 'next/image';
+
 const messiri = El_Messiri({
 	weight: '400',
 	subsets: ['arabic'],
@@ -20,7 +20,7 @@ export default function page({ params }: {params: {id:string}}) {
           </div>
           <div className="">
               {detailPorto && 
-                <img src={detailPorto.image} alt="portofolio" />
+                <img src={detailPorto.image} alt="portofolio"/>
               }
               {detailPorto && 
                   <p>{detailPorto.description}</p>
