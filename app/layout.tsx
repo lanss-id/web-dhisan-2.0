@@ -50,7 +50,7 @@ export default function RootLayout({
       <body className={`bg-background text-foreground container ${poppins.className}`}>
           <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
             <Navbar />
-            <main className={`flex flex-col items-center`}>
+            <main className={``}>
                 {children}
             </main>
             <Footer />

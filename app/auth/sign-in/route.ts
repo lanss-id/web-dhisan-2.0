@@ -26,7 +26,7 @@ export async function POST(request: Request) {
   }
 
   return NextResponse.redirect(
-    `${requestUrl.origin}/smoothies`, 
+    `${requestUrl.origin}/dashboard`, 
     {
       status: 301,
     }

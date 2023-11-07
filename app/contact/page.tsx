@@ -1,5 +1,5 @@
 import { El_Messiri } from "next/font/google"
-import FormConsult from "@/components/costums/form";
+import FormConsult from "@/components/costums/formAlert";
 
 const messiri = El_Messiri({
 	weight: '400',

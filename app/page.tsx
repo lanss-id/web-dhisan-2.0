@@ -1,6 +1,6 @@
 import { Button } from "@nextui-org/react"
 import { El_Messiri } from "next/font/google"
-import FormConsult from "@/components/costums/form"
+import FormConsult from "@/components/costums/formAlert"
 import Carousel from '@/components/costums/carousel'
 
 const messiri = El_Messiri({
@@ -24,15 +24,15 @@ export default function Index() {
 							radius="none"
 							className="mt-4 mb-6"
 						>Konsultasi gratis</Button>
-					</a>  
+					</a>
 				</div>
 			</div>
-			<Carousel />
+			<img src="/porto/forest-hill.png" alt="hero image" className="object-cover rounded-none w-screen aspect-video object-center md:h-96 lg:h-[32rem] xl:h-[38rem]"/>
 		</section>
 		<section className='mt-10'>
-			<h1 className={`${messiri.className} font-semibold text-3xl md:text-4xl`}>
+			<a href="/about" className={`${messiri.className} font-semibold text-3xl md:text-4xl`}>
 				Tentang Kami
-			</h1>
+			</a>
 			<p className="md:text-lg md:ml-72 md:indent-10 mt-6 md:mt-8">
 				Kami adalah mitra terpercaya bagi para developer bangunan di Indonesia yang ingin menghadirkan proyek-proyek bangunan yang berkesan dan memukau. Sebagai sebuah studio arsitektur yang berdedikasi, kami memiliki visi untuk mengubah pandangan Anda tentang arsitektur. Kami menghadirkan inovasi dan kreativitas dalam setiap proyek, menciptakan desain yang tak hanya memikat, tetapi juga berfungsionalitas tinggi.
 			</p>
@@ -41,7 +41,7 @@ export default function Index() {
 			</p>
 		</section>
 		<section className="mt-16 space-y-4">
-			<h1 className={`${messiri.className} font-semibold text-3xl md:text-4xl`}>Portofolio</h1>
+			<a href="/portofolio" className={`${messiri.className} font-semibold text-3xl md:text-4xl`}>Portofolio</a>
 			<div className="md:ml-72">
 				<Carousel />
 			</div>
@@ -49,7 +49,7 @@ export default function Index() {
 		<div className="mb-22 text-black" id='form'>.</div>
 		<section className="mt-12">
 			<h1 className={`${messiri.className} font-semibold text-3xl md:text-4xl`}>Konsultasi</h1>
-			<div className="mt-8">
+			<div className="my-8">
 				<div className=" md:pl-72">
 					<FormConsult />
 				</div>

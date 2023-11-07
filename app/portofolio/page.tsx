@@ -12,23 +12,15 @@ const messiri = El_Messiri({
 export default function AboutPage() {
 	return (
 		<section className='mt-12 space-y-6'>
-
 				<h1 className={`${messiri.className} font-semibold text-3xl md:text-4xl`}>
 					Portofolio Kami
 				</h1>
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-					<CarouselTransition />
-					<CarouselTransition />
-					<CarouselTransition />
-					<CarouselTransition />
-					<CarouselTransition />
-					<CarouselTransition />
-					<CarouselTransition />
 				</div>
-				<div className="">
+				<div className="grid grid-cols-1 md:grid-cols-3 gap-4">
 					{portofolios.map(portofolio => (
-						<Link href={'/portofolio/' + portofolio.id} key={portofolio.id}>
-							{portofolio.title}
+						<Link href={'/portofolio/' + portofolio.id} key={portofolio.id} className="">
+							<img src={portofolio.image[0]} alt="portofolio" />
 						</Link>
 					))}
 				</div>

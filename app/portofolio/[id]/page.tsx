@@ -16,18 +16,18 @@ export default function page({ params }: {params: {id:string}}) {
     return (
       <>
           <div className={`${messiri.className} text-3xl font-semibold`}>
-              this is a detail portofolio {detailPorto?.title}
+              Detail portofolio {detailPorto?.title} 
           </div>
-          <div className="">
+          {detailPorto && 
+             <p className='my-4'>{detailPorto.description}</p>
+          }
+          {detailPorto && 
+             <p className='mb-6'>years: {detailPorto.year}</p>
+          }
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {detailPorto?.image?.map(img => (
                 <img key={img} src={img}/>
               ))
-              }
-              {detailPorto && 
-                  <p>{detailPorto.description}</p>
-              }
-              {detailPorto && 
-                  <p>years: {detailPorto.year}</p>
               }
           </div>
       </>
