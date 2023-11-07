@@ -6,6 +6,7 @@ import { Navbar } from '@/components/costums/navbar'
 import Footer  from '@/components/costums/footer'
 import {Poppins} from 'next/font/google'
 import React from 'react';
+import { Analytics } from '@vercel/analytics/react';
 
 const poppins = Poppins({
   weight: '400',
@@ -14,8 +15,7 @@ const poppins = Poppins({
 }) 
  
 export const metadata: Metadata = {
-  
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000/'),
+  metadataBase: new URL('https://dhisanatelier.co' ?? 'https://2p1p04cw-3000.asse.devtunnels.ms/'),
   title: {
 		default: siteConfig.name,
 		template: `%s | ${siteConfig.name}`,
@@ -32,10 +32,10 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     siteName: siteConfig.name,
     description: siteConfig.description,
-    images: siteConfig.image,
+    images: '/public/metadata-og-min.png',
   },
   twitter: {
-    images: siteConfig.image
+    images: '/public/metadata-og-min.png',
   },
   applicationName: 'Dhisan Company Profile'
 }
@@ -50,8 +50,9 @@ export default function RootLayout({
       <body className={`bg-background text-foreground container ${poppins.className}`}>
           <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
             <Navbar />
-            <main className={``}>
+            <main>
                 {children}
+                <Analytics/>
             </main>
             <Footer />
           </Providers>

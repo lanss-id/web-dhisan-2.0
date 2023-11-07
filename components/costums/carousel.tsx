@@ -47,7 +47,7 @@ export default function CarouselTransition() {
         </div>
         <div className="relative h-full w-full">
           <img
-            src="/porto/forest-hill.png"
+            src="/porto/the-forest-hill/61.png"
             alt="image 1"
             className="object-cover rounded-none w-screen aspect-video object-center md:h-96 lg:h-[32rem] xl:h-[38rem]"
           />

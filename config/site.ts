@@ -7,7 +7,7 @@ export const siteConfig = {
 		{
 			label: "Home",
 			href: "/",
-			class: false
+			class: false,
 		},
 		{
 			label: "About",

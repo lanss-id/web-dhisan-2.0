@@ -27,7 +27,7 @@ export default function Index() {
 					</a>
 				</div>
 			</div>
-			<img src="/porto/forest-hill.png" alt="hero image" className="object-cover rounded-none w-screen aspect-video object-center md:h-96 lg:h-[32rem] xl:h-[38rem]"/>
+			<img src="/porto/the-forest-hill/61.png" alt="hero image" className="object-cover rounded-none w-screen aspect-video object-center md:h-96 lg:h-[32rem] xl:h-[38rem]"/>
 		</section>
 		<section className='mt-10'>
 			<a href="/about" className={`${messiri.className} font-semibold text-3xl md:text-4xl`}>
