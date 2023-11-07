@@ -1,5 +1,4 @@
 import { El_Messiri } from "next/font/google"
-import CarouselTransition from "@/components/costums/carousel";
 import { portofolios } from "@/config/portofolios";
 import Link from "next/link";
 
