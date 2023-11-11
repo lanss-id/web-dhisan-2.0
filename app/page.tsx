@@ -2,6 +2,7 @@ import { Button } from "@nextui-org/react"
 import { El_Messiri } from "next/font/google"
 import FormConsult from "@/components/costums/formAlert"
 import Carousel from '@/components/costums/carousel'
+import Image from "next/image"
 
 const messiri = El_Messiri({
 	weight: '400',
@@ -27,7 +28,15 @@ export default function Index() {
 					</a>
 				</div>
 			</div>
-			<img src="/porto/the-forest-hill/61.png" alt="hero image" className="object-cover rounded-none w-screen aspect-video object-center md:h-96 lg:h-[32rem] xl:h-[38rem]"/>
+			<div className="relative aspect-video md:h-96 lg:h-[32rem] xl:h-[38rem]">
+				<Image
+					src="/porto/the-forest-hill/61.png"
+					alt="hero image"
+					layout="fill"
+					objectFit="cover"
+					className="object-cover rounded-none object-center"
+				/>
+			</div>
 		</section>
 		<section className='mt-10'>
 			<a href="/about" className={`${messiri.className} font-semibold text-3xl md:text-4xl`}>

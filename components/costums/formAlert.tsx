@@ -14,7 +14,7 @@ interface FormData {
 }
 
 export default function MyForm() {
-  const { register, handleSubmit, formState: { errors } } = useForm<FormData>();
+  const { register, handleSubmit, formState: { errors }, reset } = useForm<FormData>();
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<string | null>(null);
   const [open, setOpen] = useState(false);
@@ -25,6 +25,7 @@ export default function MyForm() {
       const result = await submit(data);
       setResult(result);
       setOpen(true);
+      reset()
     } catch (error: any) {
       setResult(error.message);
       setOpen(true);
@@ -33,7 +34,7 @@ export default function MyForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+    <form onSubmit={handleSubmit(onSubmit)}>
       <div className="flex flex-col space-y-2">
         <Alert className='mb-8' open={open} onClose={() => setOpen(false)}>
             {result}
@@ -49,7 +50,7 @@ export default function MyForm() {
         {errors.name && <p className="text-red-500 text-md">{errors.name.message}</p>}
       </div>
       
-      <div className="flex flex-col space-y-2">
+      <div className="flex flex-col space-y-2 mt-6">
         <Input
           type="email"
           label="Email"
@@ -61,19 +62,19 @@ export default function MyForm() {
         {errors.email && <p className="text-red-500 text-md">{errors.email.message}</p>}
       </div>
       
-      <div className="flex flex-col space-y-2">
+      <div className="flex flex-col space-y-2 mt-6">
         <Input
           type="text"
           label="No Whatsapp"
           {...register("whatsapp", { required: "No. Whatsapp harus diisi" })}
-          placeholder="0821-8880-0988"
+          placeholder="082188800988"
           labelPlacement="outside"
           variant='underlined'
         />
         {errors.whatsapp && <p className="text-red-500 text-md">{errors.whatsapp.message}</p>}
       </div>
       
-      <div className="flex flex-col space-y-2">
+      <div className="flex flex-col">
         <Textarea 
           size={'lg'} 
           type="textarea" 

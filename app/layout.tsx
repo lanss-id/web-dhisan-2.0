@@ -15,12 +15,12 @@ const poppins = Poppins({
 }) 
  
 export const metadata: Metadata = {
-  metadataBase: new URL('https://dhisanatelier.co' ?? 'https://2p1p04cw-3000.asse.devtunnels.ms/'),
+  metadataBase: new URL('https://dhisanatelier.co'),
   title: {
 		default: siteConfig.name,
 		template: `%s | ${siteConfig.name}`,
 	},
-  keywords:['Arsitektur', 'developer', 'design', 'interior', 'exterior'],
+  keywords:['Arsitektur', 'developer', 'design', 'interior', 'exterior', 'dhisan', 'atelier', 'dhisan atelier'],
 	description: siteConfig.description,
 	icons: {
 		icon: "/favicon.ico",
@@ -32,10 +32,10 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     siteName: siteConfig.name,
     description: siteConfig.description,
-    images: '/public/metadata-og-min.png',
+    images: 'https://cdn.discordapp.com/attachments/725228007501070336/1170759591693394021/metadata-og.png?ex=655a35d6&is=6547c0d6&hm=98326de7e199c799bf9efcd7c78121dc2f499565db3edaf7c660b44e8c915d35&',
   },
   twitter: {
-    images: '/public/metadata-og-min.png',
+    images: 'https://cdn.discordapp.com/attachments/725228007501070336/1170759591693394021/metadata-og.png?ex=655a35d6&is=6547c0d6&hm=98326de7e199c799bf9efcd7c78121dc2f499565db3edaf7c660b44e8c915d35&',
   },
   applicationName: 'Dhisan Company Profile'
 }

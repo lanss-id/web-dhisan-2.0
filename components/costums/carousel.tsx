@@ -2,6 +2,7 @@
 
 import { Carousel, Typography } from "@material-tailwind/react";
 import { El_Messiri } from "next/font/google"
+import Image from "next/image";
 
 const messiri = El_Messiri({
   weight: '400',
@@ -28,11 +29,15 @@ export default function CarouselTransition() {
         )}
       >
         <div className="relative h-full w-full">
-          <img
-            src="/porto/interior-b1.png"
-            alt="image 1"
-            className="object-cover rounded-none w-screen aspect-video object-center md:h-96 lg:h-[32rem] xl:h-[38rem]"
-          />
+          <div className="relative aspect-video w-full md:h-96 lg:h-[32rem] xl:h-[38rem]">
+            <Image
+              src="/porto/interior-b1.png"
+              alt="hero image"
+              layout="fill"
+              objectFit="cover"
+              className="object-cover rounded-none object-right"
+            />
+          </div>
           <div className="absolute inset-0 h-full w-full flex items-center justify-center bg-black/40">
             <div className="w-3/4 text-center md:w-2/4">
               <Typography
@@ -46,11 +51,15 @@ export default function CarouselTransition() {
           </div>
         </div>
         <div className="relative h-full w-full">
-          <img
-            src="/porto/the-forest-hill/61.png"
-            alt="image 1"
-            className="object-cover rounded-none w-screen aspect-video object-center md:h-96 lg:h-[32rem] xl:h-[38rem]"
-          />
+          <div className="relative aspect-video w-full md:h-96 lg:h-[32rem] xl:h-[38rem]">
+            <Image
+              src="/porto/the-forest-hill/61.png"
+              alt="hero image"
+              layout="fill"
+              objectFit="cover"
+              className="object-cover rounded-none object-center"
+            />
+          </div>
           <div className="absolute inset-0 h-full w-full flex items-center justify-center bg-black/40">
             <div className="w-3/4 text-center md:w-2/4">
               <Typography
@@ -64,11 +73,15 @@ export default function CarouselTransition() {
           </div>
         </div>
         <div className="relative h-full w-full">
-          <img
-            src="/porto/andromeda.png"
-            alt="image 1"
-            className="object-cover rounded-none w-screen aspect-video object-center md:h-96 lg:h-[32rem] xl:h-[38rem]"
-          />
+          <div className="relative aspect-video w-full md:h-96 lg:h-[32rem] xl:h-[38rem]">
+            <Image
+              src="/porto/andromeda.png"
+              alt="hero image"
+              layout="fill"
+              objectFit="cover"
+              className="object-cover rounded-none object-center"
+            />
+          </div>
           <div className="absolute inset-0 h-full w-full flex items-center justify-center bg-black/40">
             <div className="w-3/4 text-center md:w-2/4">
               <Typography
