@@ -1,8 +1,11 @@
+'use client'
 import { El_Messiri } from "next/font/google"
 import Link from "next/link";
-import { createClient } from "@/utils/supabase/server";
+import { createClient } from "@/utils/supabase/client";
 import { cookies } from "next/headers";
-import Image from "next/image";
+import NextImage from "next/image";
+import { Image } from "@nextui-org/image";
+import { Typography } from "@material-tailwind/react";
 
 const messiri = El_Messiri({
 	weight: '400',
@@ -11,10 +14,10 @@ const messiri = El_Messiri({
 })
 
 export default async function AboutPage() {
-	const supabase = createClient(cookies())
+	const supabase = createClient()
 	const {data: portofolio} = await supabase
-											.from('portofolio')
-											.select(`*, images (*)`)
+									.from('portofolio')
+									.select(`*, images (*)`)
 	return (
 		<section className='mt-12 space-y-6'>
 				<h1 className={`${messiri.className} font-semibold text-3xl md:text-4xl`}>
@@ -23,17 +26,32 @@ export default async function AboutPage() {
 				<div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
 					{portofolio?.map((item) => (
 						<Link href={'/portofolio/' + item.id} key={item.id}>
-							<p className="text-white">{item.name}</p>
 							{item.images.length > 0 && (
-								<div className="relative aspect-video w-full h-72 md:h-64">
+								<div className="relative h-full w-full">
+								<div className="relative aspect-video w-full md:h-64 ">
 									<Image
-									src={item.images[0].url_image}
-									alt="Image Portofolio"
-									layout="fill"
-									objectFit="cover"
-									className="object-cover rounded-none object-right"
+										as={NextImage}
+										width={1260}
+										height={720}
+										isBlurred
+										src={item.images[0].url_image}
+										alt={'Image Portofolio' + item.name}
+										radius="none"
+										className="absolute w-full h-72 md:h-64 object-cover"
 									/>
 								</div>
+								<div className="absolute inset-0 z-10 h-full w-full flex items-center justify-center bg-black/60">
+								  <div className="w-3/4 text-center md:w-2/4">
+									<Typography
+									  variant="h1"
+									  color="white"
+									  className={`text-lg md:text-2xl ${messiri.className} font-extralight tracking-widest mt-2 text-gray-200`}
+									>
+									  {item.name}
+									</Typography>
+								  </div>
+								</div>
+							  </div>
 							)}
 						</Link>
 					))}
