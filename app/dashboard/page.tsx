@@ -21,7 +21,7 @@ export default async function DashboardPage() {
 					<TableRow>
 						<TableHead className="w-[100px]">Nama</TableHead>
 						<TableHead>Email</TableHead>
-						<TableHead>Method</TableHead>
+						<TableHead>No. Whatsapp</TableHead>
 						<TableHead className="text-right">Pesan Konsul</TableHead>
 					</TableRow>
 				</TableHeader>

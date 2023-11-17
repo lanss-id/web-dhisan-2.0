@@ -2,7 +2,7 @@ import Messages from './messages'
 
 export default function Login() {
   return (
-    <div className='flex items-center h-[82vw] justify-center'>
+    <div className='flex items-center h-[70vw] justify-center'>
       <div className="flex-1 flex flex-col w-full px-8 sm:max-w-md justify-center gap-2">
 
       <form
