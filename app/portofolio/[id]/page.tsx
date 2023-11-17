@@ -1,8 +1,8 @@
 import React from 'react'
-import { portofolios } from '@/config/portofolios'
 import { createClient } from "@/utils/supabase/server";
 import { cookies } from "next/headers";
 import { El_Messiri } from 'next/font/google';
+import Image from 'next/image';
 
 const messiri = El_Messiri({
 	weight: '400',
@@ -12,7 +12,7 @@ const messiri = El_Messiri({
 
 export default async function page({ params }: {params: {id:string}}) { 
   const supabase = createClient(cookies())
-	const {data: portofolio, error} = await supabase
+	const {data: portofolio} = await supabase
 											.from('portofolio')
 											.select(`*, images (*)`)
                       .eq('id', params.id)
@@ -28,9 +28,17 @@ export default async function page({ params }: {params: {id:string}}) {
         {detailPorto && 
             <p className='mb-6'>years: {detailPorto.year}</p>
         }
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
           {detailPorto?.images?.map((image: {id:number, url_image:string}) => (
-            <img key={image.id} src={image.url_image}/>
+            <div key={image.id} className="relative aspect-video w-full h-72 md:h-64">
+              <Image
+                src={image.url_image}
+                alt="Image Portofolio"
+                layout="fill"
+                objectFit="cover"
+                className="object-cover rounded-none object-right"
+              />
+            </div>
           ))}
         </div>
     </>
