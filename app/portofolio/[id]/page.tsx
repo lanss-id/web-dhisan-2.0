@@ -2,7 +2,8 @@ import React from 'react'
 import { createClient } from "@/utils/supabase/server";
 import { cookies } from "next/headers";
 import { El_Messiri } from 'next/font/google';
-import Image from 'next/image';
+import NextImage from 'next/image';
+import { Image } from '@nextui-org/image';
 
 const messiri = El_Messiri({
 	weight: '400',
@@ -32,12 +33,15 @@ export default async function page({ params }: {params: {id:string}}) {
           {detailPorto?.images?.map((image: {id:number, url_image:string}) => (
             <div key={image.id} className="relative aspect-video w-full h-72 md:h-64">
               <Image
+                as={NextImage}
+                width={1260}
+                height={720}
+                isBlurred
                 src={image.url_image}
-                alt="Image Portofolio"
-                layout="fill"
-                objectFit="cover"
-                className="object-cover rounded-none object-right"
-              />
+                alt={'Image Portofolio'}
+                radius="none"
+                className="absolute w-full h-72 md:h-64 object-cover"
+							/>
             </div>
           ))}
         </div>
